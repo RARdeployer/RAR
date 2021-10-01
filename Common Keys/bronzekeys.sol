@@ -21,18 +21,16 @@ interface rarity_crafting_materials_i {
 }
 
 interface rarityTrans {
-    function transfer(uint from, uint to, uint amount) external returns (bool);
+    function transferFrom(uint executor, uint from, uint to, uint amount) external returns (bool);
 }
+
 
 interface codex_base_random {
     function d20(uint _summoner) external view returns (uint);
 }
 
 
-contract bronze_key_keysmith {
-    
-
-    
+contract bronze_keys_keysmith{
     
     struct Crafter {
         uint attempts;
@@ -47,11 +45,9 @@ contract bronze_key_keysmith {
     uint8 public constant decimals = 0;
     uint public totalSupply = 0;
     
-
     
     rarity_crafting_materials_i constant _craft_i = rarity_crafting_materials_i(0x2A0F1cB17680161cF255348dDFDeE94ea8Ca196A);
     rarity constant rm = rarity(0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb);
-    rarity_attributes constant _attr = rarity_attributes(0xB5F5AF1087A8DA62A23b08C00C6ec9af21F397a1);
     rarityTrans constant _rarityTrans = rarityTrans(0x00000000000147629f002966C4f2ADc1cB4f0Aca);
     codex_base_random constant _random = codex_base_random(0x7426dBE5207C2b5DaC57d8e55F0959fcD99661D4);
 
@@ -92,22 +88,22 @@ contract bronze_key_keysmith {
    
     
     function craft(uint summoner, uint crafting_materials) external {
-        require(_isApprovedOrOwner(summoner));
-        require(_attr.character_created(summoner), "!created");
+        require(_isApprovedOrOwner(summoner), "!owner");
         require(summoner != SUMMMONER_ID, "hax0r");
-        require(crafting_materials >= 1);
+        require(crafting_materials >= 1, "!mats");
         require(_craft_i.transferFrom(SUMMMONER_ID, summoner, SUMMMONER_ID, 1), "!craft");
         
-        (bool crafted) = _search_key(summoner);
         crafters[summoner].attempts++;
+        (bool crafted) = _search_key(summoner);
+        
         if(crafted){
             uint _cost = 1e17;
-            require(_rarityTrans.transfer(summoner, SUMMMONER_ID, _cost), "!rar");
+            require(_rarityTrans.transferFrom(SUMMMONER_ID, summoner, SUMMMONER_ID, _cost), "!rar");
             crafters[summoner].attempts = 0;
             _mint(summoner, 1);
             emit Crafted(msg.sender, summoner, _cost, 1);
         }
-        }
+        } 
 
     function _mint(uint dst, uint amount) internal {
         totalSupply += amount;
