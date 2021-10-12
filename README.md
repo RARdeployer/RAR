@@ -5,10 +5,15 @@ Rarrity Metaworld is the Rarity community extension with the goal to build susta
 # Medium articles
 
 [What is $RAR?](https://medium.com/@strategst/what-is-rar-in-rarity-game-8bf829865a5c)
+
 [How to wrap $RAR to ERC20](https://medium.com/@strategst/arity-wrar-ftm-pair-on-spookyswap-how-to-wrap-your-rar-9073d3e8ee0d)
+
 [How to wrap Gold and Crafting Materials I](https://medium.com/@strategst/first-rar-gold-and-rar-craftingmaterials-utility-pairs-13dcf0825154)
+
 [Legendary Keys](https://medium.com/@strategst/here-is-the-legendary-key-mortal-coil-8f0ca669272a)
+
 [Godwin's Alehouse game concept](https://medium.com/@strategst/welcome-to-the-godwins-alehouse-782c789bb333)
+
 
 # Contracts
 
