@@ -1,6 +1,6 @@
 # Rarity Metaworld
 
-Rarrity Metaworld is the Rarity community extension with the goal to build sustainable p2e game. $RAR was claimable for free for every summoner level 2+.
+Rarrty Metaworld is the Rarity community extension with the goal to build sustainable p2e game. $RAR was claimable for free for every summoner level 2+.
 
 # Medium articles
 
@@ -30,12 +30,19 @@ Rarrity Metaworld is the Rarity community extension with the goal to build susta
 # UI's
 
 [Check $RAR balance](https://rarityrar.com/rarbalance)  
+
 [Craft Bronze Keys](https://rarityrar.com/bronze)
+
 [Godwin's Alehouse](https://alehouse.rarityrar.com/)
+
 
 # Social
 
 [Telegram](https://t.me/rarityrar)
+
 [Discord](https://discord.com/invite/Eu4qHBuWZT)
+
 [Twitter](https://twitter.com/RarityMetaworld)
+
 [中文社区](https://t.me/rarchina)
+
